@@ -1,3 +1,16 @@
+class Quiz:
+    """Quiz"""
+
+    def __init__(self, questions):
+        x = 0
+        for i in questions:
+            questions[questions.index(i, x, x+1)] = Question(i[0], i[1])
+        self.questions = questions
+
+    def ask(self):
+        for i in self.questions:
+            i.ask()
+
 class Question:
     """Question in a quiz"""
 
